@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <title>URL's local shortner</title>
+</head>
+
+<body>
+    <div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <br>
+    <center>
+        Introduce your URL to short:
+    </center>
+    <center>
+        <form action="/shortner/" method="post">
+            <input type="text" id="url" name="url">
+            <input type="submit" value="Short">
+        </form>
+    </center>
+</body>
